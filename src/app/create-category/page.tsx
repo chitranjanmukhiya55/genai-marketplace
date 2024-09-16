@@ -1,9 +1,9 @@
 "use client";
 
-import React, { FC, useEffect, useState } from "react"; 
+import React, { FC, useEffect, useState } from "react";
 import Input from "@/shared/Input/Input";
 import Textarea from "@/shared/Textarea/Textarea";
-import FormItem from "@/components/FormItem"; 
+import FormItem from "@/components/FormItem";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
@@ -26,8 +26,8 @@ const PageUploadItem = ({ }) => {
     const [categoryType, setCategoryType] = useState('')
     const [open, setOpen] = useState(false)
 
-    const [images, setImages] = useState({ name: '' })
-
+    //const [images, setImages] = useState({ name: '' })
+    const [images, setImages] = useState<File | undefined>(undefined);
 
     const handleChange = (e: any) => {
         const { name, value } = e.target;
@@ -40,10 +40,14 @@ const PageUploadItem = ({ }) => {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
+        if (!images) {
+
+            return;
+        }
         const NewformData = new FormData()
 
         images && NewformData.append('images', images);
-
+        //const [images, setImages] = useState<File | null>(null);
 
         NewformData.append("name", formData.name)
         NewformData.append('description', formData.description);
@@ -116,13 +120,13 @@ const PageUploadItem = ({ }) => {
 
                             <FormItem
                                 label="Description"
-                                // desc={
-                                //     <div>
-                                //         {`The description will be included on the item's detail page   underneath its image.`}{" "}
-                                //         <span className="text-green-500">Markdown</span> syntax is
-                                //         supported.
-                                //     </div>
-                                // }
+                            // desc={
+                            //     <div>
+                            //         {`The description will be included on the item's detail page   underneath its image.`}{" "}
+                            //         <span className="text-green-500">Markdown</span> syntax is
+                            //         supported.
+                            //     </div>
+                            // }
 
                             >
                                 <Textarea rows={6} className="mt-1.5" placeholder="..." id="description" name="description" value={formData.description} onChange={handleChange} />

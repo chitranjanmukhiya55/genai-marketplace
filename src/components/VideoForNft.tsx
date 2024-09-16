@@ -114,7 +114,7 @@ const VideoForNft: FC<VideoForNftProps> = ({
         containerClassName={`absolute inset-0 ${
           firstRender ? "opacity-0" : "opacity-100"
         } transition-opacity duration-1000`}
-        src={featuredImage}
+        src={featuredImage as string}
         className="object-cover group-hover:scale-[1.03] transition-transform duration-300 ease-in-out will-change-transform "
         fill
       />

@@ -24,7 +24,7 @@ const CardCategory1: FC<CardCategory1Props> = ({
       href={"/collection/name/1"}
       className={`nc-CardCategory1 flex items-center ${className}`}
     >
-      <NcImage
+      {/* <NcImage
         alt=""
         containerClassName={`flex-shrink-0 relative ${
           size === "large" ? "w-20 h-20" : "w-12 h-12"
@@ -32,19 +32,26 @@ const CardCategory1: FC<CardCategory1Props> = ({
         src={featuredImage || _getImgRd()}
         sizes="(max-width: 640px) 100vw, 40vw"
         fill
+      /> */}
+      <NcImage
+        alt=""
+        containerClassName={`flex-shrink-0 relative ${size === "large" ? "w-20 h-20" : "w-12 h-12"
+          } rounded-lg mr-4 overflow-hidden`}
+        src={typeof featuredImage === 'string' ? featuredImage : ''}
+        sizes="(max-width: 640px) 100vw, 40vw"
+        fill
       />
+
       <div>
         <h2
-          className={`${
-            size === "large" ? "text-lg" : "text-base"
-          } nc-card-title text-neutral-900 dark:text-neutral-100 font-semibold`}
+          className={`${size === "large" ? "text-lg" : "text-base"
+            } nc-card-title text-neutral-900 dark:text-neutral-100 font-semibold`}
         >
           {name || _getTagNameRd()}
         </h2>
         <span
-          className={`${
-            size === "large" ? "text-sm" : "text-xs"
-          } block mt-[2px] text-neutral-500 dark:text-neutral-400`}
+          className={`${size === "large" ? "text-sm" : "text-xs"
+            } block mt-[2px] text-neutral-500 dark:text-neutral-400`}
         >
           {desc}
         </span>

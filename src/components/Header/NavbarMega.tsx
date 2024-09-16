@@ -2,12 +2,18 @@
 import React, { FC, useState } from 'react';
 import Link from 'next/link';
 export interface MainNav2LoggedProps { }
-
+interface MenuItem {
+    name: string;
+    logo: string;
+    leftSide: { name: string }[];
+    rightSide: { name: string; content: { name: string }[] }[];
+  }
 const NavbarMega: FC<MainNav2LoggedProps> = () => {
-    const [hoverIndex, setHoverIndex] = useState(null);
+    const [hoverIndex, setHoverIndex] = useState<string | null>(null);
+   // const [hoverIndex, setHoverIndex] = useState(null);
     const [selectedLeftSideItem, setSelectedLeftSideItem] = useState(null);
 
-      const DropdownMenu = ({ item }) => (
+      const DropdownMenu: FC<{ item: MenuItem }> = ({ item }) => (
         <div className={`absolute top-full left-0 w-full flex transition-all duration-200  right-0 inset-0 z-[99] shadow-lg transform ${item ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'}`}>
             <div
                 className={`flex w-full gap-8 bg-sky-800 h-fit  rounded shadow p-5 `}

@@ -52,11 +52,11 @@ const PageCollection = () => {
    
   });
 
-  const [thumbnail, setThumbnail] = useState()
+  const [thumbnail, setThumbnail] = useState<File | undefined>()
 
-  const [logo, setLogo] = useState()
+  const [logo, setLogo] = useState<File | undefined>()
 
-  const [screenShot, setScreenShot] = useState([])
+  const [screenShot, setScreenShot] = useState <File[]>([])
   const [homeList, setHomeList] = useState([])
   const [typeList, setTypeList] = useState([])
 
@@ -159,7 +159,7 @@ console.log( screenShot1)
 
     NewformData.append("name", formData.name)
     NewformData.append('description', formData.description);
-    NewformData.append('category_module_id', formData.category_module_id);
+    NewformData.append('category_module_id', formData.category_module_id.toString());
     NewformData.append('short_description', formData.short_description);
     NewformData.append('external_link', formData.external_link);
     NewformData.append('support_email', formData.support_email);
@@ -170,9 +170,9 @@ console.log( screenShot1)
     NewformData.append('example_input', formData.example_input);
     NewformData.append('example_output', formData.example_output);
     NewformData.append('timeline', formData.timeline);
-    NewformData.append('user_id', 6);
+    NewformData.append('user_id', "6");
     NewformData.append('type_id', formData.type_id);
-    NewformData.append('price', formData.price); 
+    NewformData.append('price', formData.price.toString()); 
 
 
     const response = await axios.put(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/admin/edit-modules/${JSON.parse(params.id)}`, NewformData, {

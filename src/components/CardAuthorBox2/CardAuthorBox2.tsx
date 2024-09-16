@@ -25,8 +25,10 @@ const CardAuthorBox2: FC<CardAuthorBox2Props> = ({ className = "" }) => {
           <NcImage
             fill
             containerClassName="flex aspect-w-7 aspect-h-5 sm:aspect-h-6 w-full h-0"
-            src={nftImageRd}
+            src={nftImageRd as string}
           />
+
+
         </div>
         <div className="absolute top-3 inset-x-3 flex">
           <div className=" py-1 px-4 bg-neutral-100 dark:bg-neutral-800 rounded-full flex items-center justify-center leading-none text-xs font-medium">

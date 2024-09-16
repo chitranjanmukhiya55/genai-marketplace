@@ -14,8 +14,8 @@ export interface CardListingProps {
   
   name:string
 }
-const PageCollection:FC<CardListingProps> = ({name}) => { 
-  
+const PageCollection:FC = () => { 
+
   const params = useParams<{ name: string; }>()
    const {  trendingList  } = useAppSelector((state) => state.auth);
 console.log(params,"category name list")
@@ -135,7 +135,7 @@ console.log(params,"category name list")
         }
  
         <div className="relative  ">
-          <SectionTrending title="Trending Prompt" moduleList={trendingList} />
+          <SectionTrending title="Trending Prompt" moduleList={trendingList} type="trending" />
        {/* <SectionSliderCardNftVideo title="Newest Prompt" /> */}
        </div>
 

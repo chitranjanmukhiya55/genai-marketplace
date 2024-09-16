@@ -86,7 +86,7 @@ const CardAuthorBox4: FC<CardAuthorBox4Props> = ({
           </div>
           <FollowButton
             sizeClass="px-4 py-2 min-w-[84px]"
-            isFollowing={following}
+            isFollowing={following} onClick={() => {}}
           />
         </div>
       </div>

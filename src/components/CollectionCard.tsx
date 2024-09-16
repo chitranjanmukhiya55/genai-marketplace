@@ -21,7 +21,7 @@ const CollectionCard: FC<CollectionCardProps> = ({
       <NcImage
         fill
         containerClassName="absolute inset-0 z-0 overflow-hidden"
-        src={imgs[0]}
+        src={imgs[0] as string}
       />
       <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 group-hover:h-full to-transparent "></div>
 
@@ -45,17 +45,17 @@ const CollectionCard: FC<CollectionCardProps> = ({
           <NcImage
             containerClassName="relative z-0 w-full h-20 rounded-xl overflow-hidden"
             fill
-            src={imgs[1]}
+            src={imgs[1] as string}
           />
           <NcImage
             containerClassName="relative z-0 w-full h-20 rounded-xl overflow-hidden"
             fill
-            src={imgs[2]}
+            src={imgs[2]  as string}
           />
           <NcImage
             containerClassName="relative z-0 w-full h-20 rounded-xl overflow-hidden"
             fill
-            src={imgs[3]}
+            src={imgs[3]  as string}
           />
         </div>
       </div>

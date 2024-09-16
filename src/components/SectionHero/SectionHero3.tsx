@@ -27,12 +27,12 @@ const SectionHero3 = () => {
         <HeroSearchForm className="mt-5 lg:mt-24 2xl:mt-40" />
       </div>
       <div className="relative aspect-w-4 aspect-h-3 sm:aspect-w-16 sm:aspect-h-9">
-        <Image
+        {/* <Image
           className="absolute inset-0 object-cover rounded-[32px]"
           fill
           src={imagePng}
           alt="hero"
-        />
+        /> */}
       </div>
     </div>
   );

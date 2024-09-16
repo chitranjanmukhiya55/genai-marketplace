@@ -15,6 +15,12 @@ import { setModuleList } from "@/redux/auth/authSlice";
 import { useAppSelector } from "@/redux/hooks";
 import { BulbIcon } from "@/icons";
 import authFetch from "@/utils/interceptor";
+
+interface SelectedCategories {
+  categories: string[]; // Define the type of categories array
+  type: string[];
+  model: string;
+}
 // DEMO DATA
 const typeOfSales = [
   {
@@ -123,7 +129,7 @@ const TabFilters: FC<TabFiltersProps> = ({ moduleList }) => {
 
 
 
-  const [selectedCategories, setSelectedCategories] = useState({
+  const [selectedCategories, setSelectedCategories] = useState<SelectedCategories>({
     categories: [],
     type: [],
     model: ""
@@ -393,6 +399,10 @@ const TabFilters: FC<TabFiltersProps> = ({ moduleList }) => {
 
   // FOR RESPONSIVE MOBILE
   const renderTabMobileFilter = () => {
+    function renderMoreFilterItem(typeOfSales: { name: string; }[]): React.ReactNode {
+      throw new Error("Function not implemented.");
+    }
+
     return (
       <div className="flex-shrink-0">
         <div

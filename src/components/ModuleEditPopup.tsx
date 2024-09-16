@@ -40,7 +40,7 @@ export interface CardNFTProps {
   id:any
 }
 
-const ModuleEditPopup: FC<CardNFTProps> = ({any }) => {
+const ModuleEditPopup: FC<CardNFTProps> = ({ }) => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     description: '',
@@ -133,15 +133,20 @@ const ModuleEditPopup: FC<CardNFTProps> = ({any }) => {
     e.preventDefault();
     const NewformData = new FormData()
 
-    logo && NewformData.append('logo', logo);
-    thumbnail && NewformData.append('thumbnail', thumbnail);
-    // video && NewformData.append('video', video);
     // logo && NewformData.append('logo', logo);
-
+    // thumbnail && NewformData.append('thumbnail', thumbnail);
+    // // video && NewformData.append('video', video);
+    // // logo && NewformData.append('logo', logo);
+    if (logo instanceof Blob) {
+      NewformData.append('logo', logo, logo.name);
+  }
+  if (thumbnail instanceof Blob) {
+      NewformData.append('thumbnail', thumbnail, thumbnail.name);
+  }
 
     NewformData.append("name", formData.name)
     NewformData.append('description', formData.description);
-    NewformData.append('category_module_id', formData.category_module_id);
+    NewformData.append('category_module_id', formData.category_module_id.toString());
     NewformData.append('short_description', formData.short_description);
     NewformData.append('external_link', formData.external_link);
     NewformData.append('support_email', formData.support_email);
@@ -152,9 +157,9 @@ const ModuleEditPopup: FC<CardNFTProps> = ({any }) => {
     NewformData.append('example_input', formData.example_input);
     NewformData.append('example_output', formData.example_output);
     NewformData.append('timeline', formData.timeline);
-    NewformData.append('user_id', 6);
-    NewformData.append('type_id', formData.type_id);
-    NewformData.append('price', formData.price); 
+    NewformData.append('user_id', '6');
+    NewformData.append('type_id', formData.type_id.toString());
+    NewformData.append('price', formData.price.toString()); 
 
 
     const response = await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/admin/create-modules`, NewformData, {

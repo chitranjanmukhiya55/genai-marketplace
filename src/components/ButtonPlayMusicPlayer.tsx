@@ -79,7 +79,7 @@ const ButtonPlayMusicPlayer: FC<ButtonPlayMusicPlayerProps> = ({
 
     return (
       <span className="z-10 bg-neutral-900 bg-opacity-60 rounded-full flex  items-center justify-center text-xl text-white border border-white w-11 h-11 cursor-pointer">
-        <Image className="w-5" src={iconPlaying} alt="paused" />
+        {/* <Image className="w-5" src={iconPlaying} alt="paused" /> */}
       </span>
     );
   };

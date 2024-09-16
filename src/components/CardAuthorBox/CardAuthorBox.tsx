@@ -40,7 +40,7 @@ const CardAuthorBox: FC<CardAuthorBoxProps> = ({ className = "", index }) => {
           <span className="text-neutral-400 font-normal">ETH</span>
         </div>
       </div>
-      <FollowButton className="mt-3" />
+      <FollowButton className="mt-3" onClick={() => {}} />
     </Link>
   );
 };

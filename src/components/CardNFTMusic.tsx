@@ -119,7 +119,7 @@ const CardNFTMusic: FC<CardNFTMusicProps> = ({
       <div className="w-11/12 max-w-[360px] transform -mt-32 relative z-10">
         <div className={`px-5 flex items-center space-x-4 relative `}>
           <div className={`flex-grow flex justify-center`}>
-            <Image src={musicWave} alt="musicWave" />
+            {/* <Image src={musicWave} alt="musicWave" /> */}
           </div>
           <ButtonPlayMusicPlayer
             url={nftAudioUrlRl}

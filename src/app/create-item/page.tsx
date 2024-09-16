@@ -50,11 +50,11 @@ const PageUploadItem = ({ }) => {
    
   });
 
-  const [thumbnail, setThumbnail] = useState()
+  const [thumbnail, setThumbnail] = useState<File | undefined>()
 
-  const [logo, setLogo] = useState()
+  const [logo, setLogo] = useState<File | undefined>()
 
-  const [screenShot, setScreenShot] = useState([])
+  const [screenShot, setScreenShot] = useState<File[]>([])
   const [homeList, setHomeList] = useState([])
   const [typeList, setTypeList] = useState([])
 
@@ -133,7 +133,7 @@ const PageUploadItem = ({ }) => {
 
     NewformData.append("name", formData.name)
     NewformData.append('description', formData.description);
-    NewformData.append('category_module_id', formData.category_module_id);
+    NewformData.append('category_module_id', formData.category_module_id.toString());
     NewformData.append('short_description', formData.short_description);
     NewformData.append('external_link', formData.external_link);
     NewformData.append('support_email', formData.support_email);
@@ -144,9 +144,9 @@ const PageUploadItem = ({ }) => {
     NewformData.append('example_input', formData.example_input);
     NewformData.append('example_output', formData.example_output);
     NewformData.append('timeline', formData.timeline);
-    NewformData.append('user_id', 6);
-    NewformData.append('type_id', formData.type_id);
-    NewformData.append('price', formData.price); 
+    NewformData.append('user_id', '6');
+    NewformData.append('type_id', formData.type_id.toString());
+    NewformData.append('price', formData.price.toString()); 
 
   
     const response = await authFetch.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/admin/create-modules`, NewformData, {

@@ -51,11 +51,11 @@ const SectionHowItWork: FC<SectionHowItWorkProps> = ({
   return (
     <div className={`nc-SectionHowItWork ${className}`}>
       <div className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-16 xl:gap-20">
-        <Image
+        {/* <Image
           className="hidden md:block absolute inset-x-0 top-5"
           src={VectorImg}
           alt="vector"
-        />
+        /> */}
         {data.map((item: typeof DEMO_DATA[number], index: number) => (
           <div
             key={item.id}
@@ -64,7 +64,7 @@ const SectionHowItWork: FC<SectionHowItWorkProps> = ({
             <NcImage
               containerClassName="mb-4 sm:mb-10 max-w-[140px] mx-auto"
               className="rounded-3xl"
-              src={item.img}
+              src={item.img.src}
               sizes="150px"
               alt="HIW"
             />

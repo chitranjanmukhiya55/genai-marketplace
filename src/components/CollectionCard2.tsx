@@ -31,7 +31,7 @@ const CollectionCard2: FC<CollectionCard2Props> = ({
         <NcImage
           containerClassName="relative z-0 aspect-w-8 aspect-h-5"
           className="object-cover rounded-xl"
-          src={nftImages[0]}
+          src={nftImages[0] as string}
           sizes="(max-width: 600px) 480px, 33vw"
           fill
         />
@@ -40,21 +40,21 @@ const CollectionCard2: FC<CollectionCard2Props> = ({
             fill
             containerClassName="relative w-full h-28"
             className="object-cover rounded-xl"
-            src={nftImages[1]}
+            src={nftImages[1] as string}
             sizes="150px"
           />
           <NcImage
             fill
             containerClassName="relative w-full h-28"
             className="object-cover rounded-xl"
-            src={nftImages[2]}
+            src={nftImages[2] as string}
             sizes="150px"
           />
           <NcImage
             fill
             containerClassName="relative w-full h-28"
             className="object-cover rounded-xl"
-            src={nftImages[3]}
+            src={nftImages[3]  as string}
             sizes="150px"
           />
         </div>

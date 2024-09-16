@@ -66,7 +66,7 @@ const CardAuthorBox3: FC<CardAuthorBox3Props> = ({
               @creator
             </span>
           </div>
-          <FollowButton isFollowing={following} />
+          <FollowButton isFollowing={following} onClick={() => {}} />
         </div>
         <div className="mt-4 text-sm text-neutral-500 dark:text-neutral-400">
           X-Metaverse is a Star Wars game based on NFT+ blockchain exploration,

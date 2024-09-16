@@ -15,7 +15,7 @@ const CartSidebar: FC<MainNav2LoggedProps> = ({setOpenCartSide}) => {
     const [hoverIndex, setHoverIndex] = useState();
     
 
-    const [moduleList, setModuleList] = useState([]);
+    const [moduleList, setModuleList] = useState<any[]>([]);
    
     const getModule = async () => {
     try {

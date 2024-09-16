@@ -90,7 +90,8 @@ const PlayerContent: FC<PlayerContentProps> = ({
             containerClassName={`absolute left-0 w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 transition-transform nc-animation-spin rounded-full ${
               playing ? "playing" : ""
             }`}
-            src={nftsImgs[0]}
+            //src={nftsImgs[0]}
+            src={nftsImgs[0].src}
             className="object-cover w-full h-full rounded-full shadow-md"
           />
           <div className="flex-grow overflow-hidden">
