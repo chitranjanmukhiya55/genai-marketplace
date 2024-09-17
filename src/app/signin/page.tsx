@@ -276,7 +276,7 @@ const PageLogin = () => {
                 </div>
                 <div className="">
                   <button
-                    className="w-full mt-4 mb-[40px] text-lg flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm  font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className="w-full mt-4 mb-[40px] text-lg flex justify-center items-center gap-4 py-2 px-4 border border-transparent rounded-md shadow-sm  font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     disabled={loading && true}
                     onClick={(e) => handleSubmit(e)}
                   >
